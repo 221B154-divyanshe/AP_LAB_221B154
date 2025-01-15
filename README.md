@@ -1,3 +1,5 @@
 # AP_LAB3
 
-This is my first lab, where I am learning git.
+Hey, Divyanshi this side.
+
+This is AP Lab, I will be learning java and will keep track of progress here.
