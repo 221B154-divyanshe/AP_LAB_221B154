@@ -1,0 +1,43 @@
+Docker solves the problem of "It works on my machine."
+
+
+Docker lets you package your app with everything it needs (code, libraries, dependencies) into one container so it runs the same everywhere — on your computer, servers, or the cloud.
+
+Docker vs Virtual Machine 
+
+Docker is a lightweight tool that runs applications in isolated environments using the host OS kernel, which makes it faster to start and more efficient with system resources.
+
+Virtual machines run a full operating system using a hypervisor, providing strong isolation but requiring more resources like CPU and RAM.
+
+
+Demo:- 
+>> docker pull hello world
+>> docker run hello-world
+
+Here, image means class and containers means objects.
+
+Docker doemon: A process that runs in background always.
+
+Using Ubuntu:-
+
+>> docker pull ubuntu 
+>> docker run -it ubuntu 
+
+>> exit //to exit the system
+
+Docker Network 
+It lets to container talk to each other without the need of IP address
+
+>> docker network ls 
+>> docker network create mongo-network 
+
+>> docker run -d -p 27017:27017--name mongo -- network mongo-network -e MONGO_INITDB_ROOT_USERNAME=admin-e MONGO_INITDB_ROOT_PASSWORD=admin mongo
+
+>> docker ps //image running 
+>> docker ps -a?? image stored
+
+p-flag: port binding 
+
+//running mongo-express container on isolated network mongo-network 
+
+>> docker run -d -p 8081:8081 --name mongo-express --network mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=admin -e ME_CONFIG_MONGODB_URL="mongodb://admin:admi@mongo:27017" mongo-express
